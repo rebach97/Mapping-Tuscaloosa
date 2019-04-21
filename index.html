@@ -71,6 +71,23 @@ map.on('load', function () {
     "source": {
       "type": "geojson",
       "data": "gender.geojson"
+    },
+    paint: {
+      'circle-radius': [
+          'interpolate',
+          ['linear'],
+          ['get', 'Property Values'],
+          0,
+          0,
+          15200,
+          5,
+          31455,
+          8,
+          47710,
+          10,
+          80220,
+          15
+        ],
     }
   });
 });
