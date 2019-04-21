@@ -51,7 +51,7 @@ a {
   <h1>Property Values in Downtown Tuscaloosa</h1>
 <div class='session' id='sliderbar'>
   <h2>Year: <label id='year'></label></h2>
-  <input id='slider' class='row' type='range' min='1958' max='1977' step='1' value='1958' />
+  <input id='slider' class='row' type='range' min='1958' max='1977' step='1' value='0' />
 </div>
 </div>
 <script>
@@ -99,7 +99,7 @@ map.on('load', function () {
     }
   });
   document.getElementById('slider').addEventListener('input', function(e) {
-    var year = parseInt(e.target.value);
+    var year = parseInt(e.target.value, 1958);
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
   });  
