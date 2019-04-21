@@ -50,7 +50,7 @@ a {
 <div id='console'>
   <h1>Property Values in Downtown Tuscaloosa</h1>
 <div class='session' id='sliderbar'>
-  <h2>Year: <label id='active-year'>1958</label></h2>
+  <h2>Year: <label id='year'>1958</label></h2>
   <input id='slider' class='row' type='range' min='1958' max='1977' step='1' value='0' />
 </div>
 </div>
@@ -102,7 +102,7 @@ map.on('load', function () {
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // update the map
-    map.setFilter('gender', ['==', ['number', ['get', Year']], year]);
+    map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
   });  
 });
 </script>
