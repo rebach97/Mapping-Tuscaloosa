@@ -12,30 +12,25 @@ body {
   padding: 0;
   font-family: 'Montserrat', Montserrat, Sans-serif;
 }
-
 #map {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
 }
-
 h1 {
   font-size: 20px;
   line-height: 30px;
 }
-
 h2 {
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 10px;
 }
-
 a {
   text-decoration: none;
   color: #2dc4b2;
 }
-
 #console {
   position: absolute;
   width: 240px;
@@ -50,20 +45,18 @@ a {
 <div id='console'>
   <h1>Property Values in Downtown Tuscaloosa</h1>
 <div class='session' id='sliderbar'>
-  <h2>Year: <label id='year'>1958</label></h2>
-  <input id='slider' class='row' type='range' min='1958' max='1977' step='1' value='0' />
+  <h2>Year: <label id='active-year'>1958</label></h2>
+  <input id='slider' class='row' type='range' min='1958' max='1977' step='1' value='1958' />
 </div>
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1Ijoicmxncmllc2JhY2giLCJhIjoiY2pkbzAwenR2MGgybjJ4cGs5MnIxd3BydiJ9.zep_0WZyBoN8SOfiWmT0bA';
-
 var map = new mapboxgl.Map({
   container: 'map', // container element id
   style: 'mapbox://styles/rlgriesbach/cjunhxs0yayo01flpptif9o51',
   center: [-87.563,33.208], // initial map center in [lon, lat]
   zoom: 15.42
 });
-  
 map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function () {
   map.addLayer({
@@ -104,6 +97,7 @@ map.on('load', function () {
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
   });  
+});
 });
 </script>
 </body>
