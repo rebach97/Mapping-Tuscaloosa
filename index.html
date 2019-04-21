@@ -97,13 +97,12 @@ map.on('load', function () {
           "#BFBFBF"
         ],
     }
-    "filter": ['==', ['point',['get', 'Block']],'164']
   });
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
-    document.getElementById('active-year').innerText; 
+    document.getElementById('active-year'); 
   });  
 });
 </script>
