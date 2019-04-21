@@ -100,7 +100,7 @@ map.on('load', function () {
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
     var year1958 = year % 1958 ? year % 1958 : 1958;
-    document.getElementById('active-year').innerText = year1958 + 1958;
+    document.getElementById('active-year').innerText = year1958;
   });  
 });
 </script>
