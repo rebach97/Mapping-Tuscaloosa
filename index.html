@@ -50,8 +50,8 @@ a {
 <div id='console'>
   <h1>Property Values in Downtown Tuscaloosa</h1>
 <div class='session' id='sliderbar'>
-  <h2>Year: <label id='year'></label></h2>
-  <input id='slider' class='row' type='range' min='0' max='20' step='1' value='0' />
+  <h2>Year: <label id='active-year'>1958</label></h2>
+  <input id='slider' class='row' type='range' min='0' max='20' step='1' value='1958' />
 </div>
 </div>
 <script>
@@ -63,36 +63,6 @@ var map = new mapboxgl.Map({
   center: [-87.563,33.208], // initial map center in [lon, lat]
   zoom: 15.42
 });
-  
-var years = [
-    '1958',
-    '1959',
-    '1960',
-    '1961',
-    '1962',
-    '1963',
-    '1964',
-    '1965',
-    '1966',
-    '1967',
-    '1968',
-    '1969',
-    '1970',
-    '1971',
-    '1972',
-    '1973',
-    '1974',
-    '1975',
-    '1976',
-    '1977'
-];
-  
-function filterBy(year) {
-  
-    var filters = ['==', 'Year', year];
-    map.setFilter('gender', filters);
-    document.getElementById('Year').textContent = years[year];
-}  
   
 map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function () {
@@ -130,9 +100,9 @@ map.on('load', function () {
     }
   });
   document.getElementById('slider').addEventListener('input', function(e) {
-    var year = parseInt(e.target.value, 20);
+    var year = parseInt(e.target.value);
     // update the map
-    filterBy(year);
+    document.getElementByID('active-year').innerText;
   });  
 });
 </script>
