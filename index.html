@@ -99,7 +99,7 @@ map.on('load', function () {
     }
   });
   document.getElementById('slider').addEventListener('input', function(e) {
-    var year = parseInt(e.target.value);
+    var year = parseInt(e.target.value, 1958);
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
   });  
