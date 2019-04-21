@@ -102,7 +102,6 @@ map.on('load', function () {
     var year = parseInt(e.target.value);
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
-    document.getElementById('year').textContent = year[year]
   });  
 });
 </script>
