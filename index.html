@@ -50,6 +50,7 @@ a {
 </div>
 </div>
 <script>
+  
 mapboxgl.accessToken = 'pk.eyJ1Ijoicmxncmllc2JhY2giLCJhIjoiY2pkbzAwenR2MGgybjJ4cGs5MnIxd3BydiJ9.zep_0WZyBoN8SOfiWmT0bA';
 var map = new mapboxgl.Map({
   container: 'map', // container element id
@@ -57,6 +58,7 @@ var map = new mapboxgl.Map({
   center: [-87.563,33.208], // initial map center in [lon, lat]
   zoom: 15.42
 });
+  
 map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function () {
   map.addLayer({
@@ -92,6 +94,7 @@ map.on('load', function () {
         ],
     }
   });
+  
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // update the map
