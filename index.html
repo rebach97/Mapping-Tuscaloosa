@@ -97,7 +97,7 @@ map.on('load', function () {
           "#BFBFBF"
         ],
     }
-    "filter": ['==', ['number',['get', 'Year']],'1970']
+    "filter": ['==', ['point',['get', 'Block']],'164']
   });
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
