@@ -96,10 +96,10 @@ map.on('load', function () {
   });
   
   document.getElementById('slider').addEventListener('input', function(e) {
-    var year = parseInt(e.target.value, 1958);
+    var year = parseInt(e.target.value);
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
-    document.getElementById('active-year').innerText = year;
+    document.getElementById('active-year').innerText;
   });  
 });
 </script>
