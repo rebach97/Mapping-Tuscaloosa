@@ -45,7 +45,7 @@ a {
 <div id='console'>
   <h1>Property Values in Downtown Tuscaloosa</h1>
 <div class='session' id='sliderbar'>
-  <h2>Year: <label id='Year'></label></h2>
+  <h2>Year: <label id='active-year'></label></h2>
   <input id='slider' type='range' min='0' max='20' step='1' value='1958' />
 </div>
 </div>
@@ -99,7 +99,8 @@ map.on('load', function () {
     var year = parseInt(e.target.value);
     // update the map
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
-    document.getElementById('active-year').innerText = year[year];
+    var year1958 = year % 1958 ? year % 1958 : 1958;
+    document.getElementById('active-year').innerText = year1958 + 1958;
   });  
 });
 </script>
