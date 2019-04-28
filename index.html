@@ -254,7 +254,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 }
 map.on('click', 'owner', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
-  var owner = e.features[0].properties.owner;
+  var owner = e.features[0].properties.Owner;
   
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
