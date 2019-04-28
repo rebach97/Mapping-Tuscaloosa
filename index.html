@@ -203,6 +203,20 @@ map.on('load', function () {
     map.setFilter('owner', ['==', ['number', ['get', 'Year']], year]);
     document.getElementById('active-year').innerText = year;
   });  
+  
+  document.getElementById('slider').addEventListener('input', function(e) {
+    var year = parseInt(e.target.value);
+    // update the map
+    map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
+    document.getElementById('active-year').innerText = year;
+  });  
+  
+  document.getElementById('slider').addEventListener('input', function(e) {
+    var year = parseInt(e.target.value);
+    // update the map
+    map.setFilter('race', ['==', ['number', ['get', 'Year']], year]);
+    document.getElementById('active-year').innerText = year;
+  });  
 
 var toggleableLayerIds = [ 'gender', 'race' ];
  
