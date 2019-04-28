@@ -254,7 +254,11 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 }
 map.on('click', 'owner', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
-  var description = e.features[0].properties;
+  var owner = e.features[0].properties.owner;
+  var landvalue = e.features[0].properties.land_value;
+  var improvementvalue = e.features[0].properties.improvement_value;
+  var improvements = e.features[0].properties.improvements;
+  
  
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -265,7 +269,7 @@ map.on('click', 'owner', function (e) {
  
   new mapboxgl.Popup()
   .setLngLat(coordinates)
-  .setHTML(description)
+  .setHTML(owner, landvalue, improvementvalue, improvements)
   .addTo(map);
 });
  
