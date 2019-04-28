@@ -102,8 +102,7 @@ var map = new mapboxgl.Map({
   center: [-87.563,33.208], // initial map center in [lon, lat]
   zoom: 15.42
 });
-  
-map.addControl(new mapboxgl.NavigationControl());
+ 
 map.on('load', function () {
   map.addLayer({
     "id": "owner",
