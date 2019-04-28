@@ -110,6 +110,18 @@ map.on('load', function () {
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
     document.getElementById('active-year').innerText = year;
   });  
+  document.getElementById('filters').addEventListener('change', function(e) {
+  var owner = e.target.value;
+  // update the map filter
+  if (owner === 'Gender') {
+    filterOwner = ['match', ['get', 'Gender'];
+  } else if (owner === 'Race') {
+    filterOwner = ['match', ['get', 'Race'];
+  } else {
+    console.log('error');
+  }
+  map.setFilter('ownership', ['gender', filterOwner]);
+});
 });
 </script>
 </body>
