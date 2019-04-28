@@ -131,6 +131,57 @@ map.on('load', function () {
     }   
   });
   
+  map.addLayer({
+    "id": "gender",
+    "type": "circle",
+    "source": {
+      "type": "geojson",
+      "data": "gender.geojson"
+      },
+      paint: {
+        "circle-radius": [
+            "interpolate",
+            ["linear"],
+            ["get", "Property Values"],
+            0,
+            0,
+            15200,
+            5,
+            31455,
+            8,
+            47710,
+            10,
+            80220,
+            15
+          ],
+        "circle-color": [
+            "match",
+            ["get", "Gender"],
+            "Female", "#DB43D3",
+            "Male", "#0DB9F2",
+            "M/F", "hsl(273, 100%, 61%)",
+            "#BFBFBF"
+        ],  
+      }    
+  });
+      
+  map.addLayer({
+    "id": "race",
+    "type": "circle",
+    "source": {
+      "type": "geojson",
+      "data": "gender.geojson"
+      },
+      paint: {
+        "circle-color": [
+          "match",
+          ["get", "Race"],
+          "White", "hsl(0, 0%, 100%)",
+          "Black", "hsl(0, 0%, 0%)",
+          "hsl(193, 44%, 63%)"
+       ],
+    }   
+  
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // update the map
