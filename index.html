@@ -255,14 +255,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 map.on('click', 'owner', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var owner = e.features[0].properties.owner;
-  var landvalue = e.features[0].properties.land_value;
-  var improvementvalue = e.features[0].properties.improvement_value;
-  var improvements = e.features[0].properties.improvements;
   
- 
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
@@ -273,12 +266,10 @@ map.on('click', 'owner', function (e) {
   .addTo(map);
 });
  
-// Change the cursor to a pointer when the mouse is over the places layer.
 map.on('mouseenter', 'owner', function () {
   map.getCanvas().style.cursor = 'pointer';
 });
- 
-// Change it back to a pointer when it leaves.
+
 map.on('mouseleave', 'owner', function () {
   map.getCanvas().style.cursor = '';
 });
