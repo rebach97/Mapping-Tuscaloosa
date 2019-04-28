@@ -51,8 +51,6 @@ a {
 <div class='session'>
   <h2>Ownership sorted by:</h2>
   <div class='row' id='filters'>
-    <input id='owner' type='radio' name='toggle' value='owner'
-    <label for='owner'>Property Value</label>
     <input id='gender' type='radio' name='toggle' value='gender'>
     <label for='gender'>Gender</label>
     <input id='race' type='radio' name='toggle' value='race'>
@@ -167,18 +165,6 @@ map.on('load', function () {
     map.setFilter('gender', ['==', ['number', ['get', 'Year']], year]);
     document.getElementById('active-year').innerText = year;
   });  
-  document.getElementById('filters').addEventListener('change', function(e) {
-  var owner = e.target.value;
-  // update the map filter
-  if (owner === 'gender') {
-    filterOwner = ['match', ['get', 'gender'];
-  } else if (owner === 'race') {
-    filterOwner = ['match', ['get', 'race'];
-  } else {
-    console.log('error');
-  }
-  map.setFilter('ownership', ['gender', filterOwner]);
-});
 });
 </script>
 </body>
