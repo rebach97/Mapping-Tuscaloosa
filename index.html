@@ -269,7 +269,8 @@ map.on('click', 'owner', function (e) {
  
   new mapboxgl.Popup()
   .setLngLat(coordinates)
-  .setHTML(owner, landvalue, improvementvalue, improvements)
+  .setHTML(owner)
+  .setHTML(improvements)
   .addTo(map);
 });
  
