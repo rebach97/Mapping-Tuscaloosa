@@ -113,10 +113,10 @@ map.on('load', function () {
   document.getElementById('filters').addEventListener('change', function(e) {
   var owner = e.target.value;
   // update the map filter
-  if (owner === 'Gender') {
-    filterOwner = ['match', ['get', 'Gender'];
-  } else if (owner === 'Race') {
-    filterOwner = ['match', ['get', 'Race'];
+  if (owner === 'gender') {
+    filterOwner = ['match', ['get', 'gender'];
+  } else if (owner === 'race') {
+    filterOwner = ['match', ['get', 'race'];
   } else {
     console.log('error');
   }
